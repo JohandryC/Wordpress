@@ -1,0 +1,22 @@
+/*Movimiento del scroll en nav*/
+jQuery(document).ready(function ($) {
+  window.onscroll = function () {
+    funcionStickyMenu();
+  };
+  var navbar = document.getElementById("ubermenu-main-247");
+  var sticky = navbar.offsetTop;
+
+  function funcionStickyMenu() {
+    if (window.pageYOffset >= sticky && navbar != null) {
+      $("#ubermenu-main-247").hasClass("sticky")
+        ? ""
+        : navbar.classList.add("sticky");
+    } else {
+      navbar
+        ? $("#ubermenu-main-247").hasClass("sticky")
+          ? navbar.classList.remove("sticky")
+          : ""
+        : "";
+    }
+  }
+});
